@@ -16,6 +16,9 @@
 		BBAFDF8028DB51BA00C4177C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF7F28DB51BA00C4177C /* Colors.swift */; };
 		BBAFDF8228DB527E00C4177C /* HabbitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8128DB527E00C4177C /* HabbitsViewController.swift */; };
 		BBAFDF8428DB52AD00C4177C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8328DB52AD00C4177C /* InfoViewController.swift */; };
+		BBAFDF8628DB986200C4177C /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8528DB986200C4177C /* Extentions.swift */; };
+		BBAFDF8828DB99C500C4177C /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8728DB99C500C4177C /* HabitViewController.swift */; };
+		BBAFDF8A28DBA05100C4177C /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8928DBA05100C4177C /* Texts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		BBAFDF7F28DB51BA00C4177C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BBAFDF8128DB527E00C4177C /* HabbitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbitsViewController.swift; sourceTree = "<group>"; };
 		BBAFDF8328DB52AD00C4177C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		BBAFDF8528DB986200C4177C /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		BBAFDF8728DB99C500C4177C /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		BBAFDF8928DBA05100C4177C /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				BBAFDF7F28DB51BA00C4177C /* Colors.swift */,
+				BBAFDF8528DB986200C4177C /* Extentions.swift */,
+				BBAFDF8928DBA05100C4177C /* Texts.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -88,6 +96,7 @@
 			children = (
 				BBAFDF8128DB527E00C4177C /* HabbitsViewController.swift */,
 				BBAFDF8328DB52AD00C4177C /* InfoViewController.swift */,
+				BBAFDF8728DB99C500C4177C /* HabitViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -166,9 +175,12 @@
 				BBAFDF6E28DB4FD000C4177C /* ViewController.swift in Sources */,
 				BBAFDF8028DB51BA00C4177C /* Colors.swift in Sources */,
 				BBAFDF6A28DB4FD000C4177C /* AppDelegate.swift in Sources */,
+				BBAFDF8A28DBA05100C4177C /* Texts.swift in Sources */,
+				BBAFDF8828DB99C500C4177C /* HabitViewController.swift in Sources */,
 				BBAFDF6C28DB4FD000C4177C /* SceneDelegate.swift in Sources */,
 				BBAFDF8428DB52AD00C4177C /* InfoViewController.swift in Sources */,
 				BBAFDF8228DB527E00C4177C /* HabbitsViewController.swift in Sources */,
+				BBAFDF8628DB986200C4177C /* Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
