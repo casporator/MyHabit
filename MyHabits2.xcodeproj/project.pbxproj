@@ -19,6 +19,7 @@
 		BBAFDF8628DB986200C4177C /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8528DB986200C4177C /* Extentions.swift */; };
 		BBAFDF8828DB99C500C4177C /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8728DB99C500C4177C /* HabitViewController.swift */; };
 		BBAFDF8A28DBA05100C4177C /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8928DBA05100C4177C /* Texts.swift */; };
+		BBAFDF8C28DCB7B800C4177C /*  HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8B28DCB7B800C4177C /*  HabitsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BBAFDF8528DB986200C4177C /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		BBAFDF8728DB99C500C4177C /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		BBAFDF8928DBA05100C4177C /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
+		BBAFDF8B28DCB7B800C4177C /*  HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HabitsStore.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				BBAFDF7F28DB51BA00C4177C /* Colors.swift */,
 				BBAFDF8528DB986200C4177C /* Extentions.swift */,
 				BBAFDF8928DBA05100C4177C /* Texts.swift */,
+				BBAFDF8B28DCB7B800C4177C /*  HabitsStore.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBAFDF6E28DB4FD000C4177C /* ViewController.swift in Sources */,
+				BBAFDF8C28DCB7B800C4177C /*  HabitsStore.swift in Sources */,
 				BBAFDF8028DB51BA00C4177C /* Colors.swift in Sources */,
 				BBAFDF6A28DB4FD000C4177C /* AppDelegate.swift in Sources */,
 				BBAFDF8A28DBA05100C4177C /* Texts.swift in Sources */,
