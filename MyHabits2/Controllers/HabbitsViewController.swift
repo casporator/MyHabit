@@ -20,7 +20,6 @@ class HabbitsViewController : UIViewController {
        }
     
     // MARK: создаю навбар
-    // MARK: создаю навбар
 func navBarCustomization () {
     let appearance = UINavigationBarAppearance()
     appearance.backgroundColor = lightGreyColor
