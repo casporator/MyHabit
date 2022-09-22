@@ -111,6 +111,10 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         present(color, animated: true)
     }
     
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        colorButton.backgroundColor = viewController.selectedColor
+    }
+    
     @objc func selectTime(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
@@ -168,6 +172,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     @objc func closeHabitViewController(){
         dismiss(animated: true)
     }
+    
     
     @objc func saveNewHabbit(){
    
