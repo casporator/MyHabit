@@ -96,12 +96,9 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = lightGreyColor
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
         view.addSubviews(nameHabbit, nameTextfield, colorHabbit, colorButton, timeHabbit, timeText, timeLabel, timePicker)
         addConstraints()
+        setupNavigationBar()
         hideKeyboardWhenTappedAround() // прячу клавиатуру по тапу
         
         }
@@ -153,4 +150,30 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             ])
     }
     
+    func setupNavigationBar(){
+    
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = lightGreyColor
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        self.navigationItem.title = "Создать"
+        navigationItem.leftBarButtonItem?.tintColor = purpleColor
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
+        
+        navigationItem.rightBarButtonItem?.tintColor = purpleColor
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNewHabbit))
+       
+        
+    }
+    
+    @objc func closeHabitViewController(){
+        dismiss(animated: true)
+    }
+    
+    @objc func saveNewHabbit(){
+   
+        // код сохраниения контента - Не забыть!!!!
+        dismiss(animated: true)
+    }
+    
 }
+
