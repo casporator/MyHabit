@@ -95,12 +95,17 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = lightGreyColor
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
         view.addSubviews(nameHabbit, nameTextfield, colorHabbit, colorButton, timeHabbit, timeText, timeLabel, timePicker)
+        addConstraints()
+        hideKeyboardWhenTappedAround() // прячу клавиатуру по тапу
+        
         }
-    
 
-        
-        
     @objc func openColorPicker(){
         let color = UIColorPickerViewController()
         color.supportsAlpha = false
@@ -147,4 +152,5 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             timePicker.topAnchor.constraint(equalTo: timeText.bottomAnchor, constant: 15),
             ])
     }
+    
 }
