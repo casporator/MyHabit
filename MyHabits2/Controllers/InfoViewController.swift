@@ -12,7 +12,6 @@ class InfoViewController: UIViewController {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.contentSize = CGSize(width: view.frame.width, height: contentView.frame.height)
         scrollView.alwaysBounceVertical = true
         scrollView.toAutoLayout()
         
@@ -56,14 +55,6 @@ class InfoViewController: UIViewController {
         addConstraints()
     }
     
-    
-    func addViews(){
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-        contentView.addSubview(infoTitleLable)
-        contentView.addSubview(infoTextLable)
-    }
-    
     // MARK: настройка навигационного бара
     func navBarCustomization () {
         let appearance = UINavigationBarAppearance()
@@ -94,7 +85,13 @@ class InfoViewController: UIViewController {
             infoTextLable.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
             infoTextLable.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -122),
         ])
-        
+     }
+    
+    func addViews(){
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(infoTitleLable)
+        contentView.addSubview(infoTextLable)
     }
 }
 

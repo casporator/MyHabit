@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+//MARK: объявляю все элементы согласно макуету:
+
 class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate {
     
     private lazy var nameHabbit : UILabel = {
@@ -90,8 +92,6 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         return tPicker
     }()
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -103,6 +103,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
         }
 
+    //MARK: функция открытия ColorPicker'а
     @objc func openColorPicker(){
         let color = UIColorPickerViewController()
         color.supportsAlpha = false
@@ -111,10 +112,12 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         present(color, animated: true)
     }
     
+    //MARK: сохранение выбранный цвета в виде фона кнопки
     func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
         colorButton.backgroundColor = viewController.selectedColor
     }
     
+    //MARK: устанавка времени привычки
     @objc func selectTime(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
@@ -122,7 +125,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         timeLabel.text = "\(dateFormatter.string(from: timePicker.date))"
     }
     
-    
+    //MARK: делаю верстку согласно макету
     func addConstraints(){
         NSLayoutConstraint.activate([
             nameHabbit.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
@@ -154,6 +157,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             ])
     }
     
+    //MARK: создаю навбар и 2 кнопки, согласно макету
     func setupNavigationBar(){
     
         let appearance = UINavigationBarAppearance()
@@ -168,15 +172,16 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
        
         
     }
-    
+    //MARK: функция закрытия модального окна для кнопки "Отменить"
     @objc func closeHabitViewController(){
         dismiss(animated: true)
     }
     
-    
+    //MARK: функция сохранения привычки
     @objc func saveNewHabbit(){
    
-        // код сохраниения контента - Не забыть!!!!
+        // надо составть логику сохраниения контента - Не забыть!!!!
+        //я так понимаю надо передать все данные в соответствующие массивы HabitStore, пока ещё не разобрался
         dismiss(animated: true)
     }
     

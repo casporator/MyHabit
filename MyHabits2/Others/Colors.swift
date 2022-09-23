@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-//MARK: выношу все цвета из макета отдельным файлом
+//MARK: выношу все цвета из макета:
 
 let lightGreyColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 247/255.0, alpha: 1)
 let purpleColor = UIColor(red: 161/255.0, green: 22/255.0, blue: 204/255.0, alpha: 1)

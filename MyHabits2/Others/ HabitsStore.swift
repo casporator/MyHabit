@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+//MARK: копирую все из файла HabitStore из задания
+
 /// Класс для хранения данных о привычке.
 public final class Habit: Codable {
     
