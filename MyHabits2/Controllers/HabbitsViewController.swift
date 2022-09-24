@@ -10,6 +10,14 @@ import UIKit
 
 class HabbitsViewController : UIViewController {
     
+    //MARK: создаю коллекцию
+    private lazy var layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 17)
+        return layout
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -179,10 +179,15 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     //MARK: функция сохранения привычки
     @objc func saveNewHabbit(){
-   
-        // надо составть логику сохраниения контента - Не забыть!!!!
-        //я так понимаю надо передать все данные в соответствующие массивы HabitStore, пока ещё не разобрался
+        let newHabit = Habit(
+            name: nameTextfield.text ?? " ",
+            date: timePicker.date,
+            color: colorButton.backgroundColor ?? .systemGray)
+
+        HabitsStore.shared.habits.append(newHabit)
+
         dismiss(animated: true)
+  
     }
     
 }
