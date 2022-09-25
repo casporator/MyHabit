@@ -20,6 +20,7 @@
 		BBAFDF8C28DCB7B800C4177C /*  HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8B28DCB7B800C4177C /*  HabitsStore.swift */; };
 		BBAFDF8F28DF519700C4177C /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8E28DF519700C4177C /* ProgressCollectionViewCell.swift */; };
 		BBAFDF9128DF526400C4177C /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF9028DF526400C4177C /* HabitCollectionViewCell.swift */; };
+		BBAFDF9328E0E07400C4177C /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF9228E0E07300C4177C /* HabitDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BBAFDF8B28DCB7B800C4177C /*  HabitsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " HabitsStore.swift"; sourceTree = "<group>"; };
 		BBAFDF8E28DF519700C4177C /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = "<group>"; };
 		BBAFDF9028DF526400C4177C /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
+		BBAFDF9228E0E07300C4177C /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				BBAFDF8128DB527E00C4177C /* HabbitsViewController.swift */,
 				BBAFDF8328DB52AD00C4177C /* InfoViewController.swift */,
 				BBAFDF8728DB99C500C4177C /* HabitViewController.swift */,
+				BBAFDF9228E0E07300C4177C /* HabitDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAFDF9328E0E07400C4177C /* HabitDetailsViewController.swift in Sources */,
 				BBAFDF6E28DB4FD000C4177C /* ViewController.swift in Sources */,
 				BBAFDF8C28DCB7B800C4177C /*  HabitsStore.swift in Sources */,
 				BBAFDF9128DF526400C4177C /* HabitCollectionViewCell.swift in Sources */,

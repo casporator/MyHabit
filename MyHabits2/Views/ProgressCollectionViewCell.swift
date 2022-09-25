@@ -13,7 +13,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     private lazy var label : UILabel = {
         let label = UILabel()
         label.text = "Все получится!"
-        label.font = UIFont(name: "SFProText-Semibold", size: 13)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         label.textColor = .systemGray
         label.toAutoLayout()
         
@@ -32,7 +32,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     private lazy var labelProgress : UILabel = {
         let percenteges = UILabel()
         percenteges.text = "0%"
-        percenteges.font = UIFont(name: "SFProText-Semibold", size: 13)
+        percenteges.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         percenteges.textColor = .systemGray
         percenteges.toAutoLayout()
         

@@ -13,7 +13,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     private lazy var nameLabel : UILabel = {
         let label = UILabel()
         label.text = "Выпить стакан воды"
-        label.font = UIFont(name: "SFProText-Semibold", size: 17)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textColor = .black
         label.numberOfLines = 2
         label.toAutoLayout()
@@ -24,7 +24,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     private lazy var timelabel : UILabel = {
         let label = UILabel()
         label.text = "Каждый день в 7:30"
-        label.font = UIFont(name: "SFProText-Regular", size: 12)
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textColor = .systemGray2
         label.toAutoLayout()
         
@@ -34,7 +34,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     private lazy var countLabel : UILabel = {
         let label = UILabel()
         label.text = "Счетчик 0"
-        label.font = UIFont(name: "SFProText-Regular", size: 13)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         label.textColor = .systemGray
         label.toAutoLayout()
         
@@ -82,10 +82,9 @@ class HabitCollectionViewCell: UICollectionViewCell {
             roundButton.heightAnchor.constraint(equalToConstant: 38),
             roundButton.widthAnchor.constraint(equalToConstant: 38),
 
-            completeMark.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 46),
-            completeMark.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -25),
-           // completeMark.centerXAnchor.constraint(equalTo: roundButton.centerXAnchor),
-           // completeMark.centerYAnchor.constraint(equalTo: roundButton.centerYAnchor),
+           
+            completeMark.centerXAnchor.constraint(equalTo: roundButton.centerXAnchor),
+            completeMark.centerYAnchor.constraint(equalTo: roundButton.centerYAnchor),
             completeMark.heightAnchor.constraint(equalToConstant: 20),
             completeMark.widthAnchor.constraint(equalToConstant: 20),
 
@@ -115,7 +114,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         nameLabel.tag = index
         nameLabel.text = HabitsStore.shared.habits[index].name
         nameLabel.textColor = HabitsStore.shared.habits[index].color
-        timelabel.text = "Каждый день в \(HabitsStore.shared.habits[index].dateString)"
+        timelabel.text = " \(HabitsStore.shared.habits[index].dateString)"
         countLabel.text = "Счетчик \(HabitsStore.shared.habits[index].trackDates.count)"
         roundButton.layer.borderColor = HabitsStore.shared.habits[index].color.cgColor
      

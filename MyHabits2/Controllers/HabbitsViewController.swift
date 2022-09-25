@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+var numberOfIndex = Int()
+
 class HabbitsViewController : UIViewController {
     
     //MARK: создаю коллекцию
@@ -34,7 +36,7 @@ class HabbitsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = Colors.lightGreyColor
+        view.backgroundColor = .white
         navBarCustomization()
         view.addSubview(collectionView)
         addConstraints()
@@ -52,15 +54,16 @@ class HabbitsViewController : UIViewController {
 // MARK: создаю навбар
 func navBarCustomization () {
     let appearance = UINavigationBarAppearance()
-    appearance.backgroundColor = Colors.lightGreyColor
-    self.navigationItem.title = "Сегодня"
-    navigationItem.titleView?.layer.borderColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.29).cgColor
+    appearance.backgroundColor = .white
+    
     navigationController?.navigationBar.prefersLargeTitles = true
+    navigationItem.title = "Сегодня"
     
     // MARK: создаю кнопку + на навбаре
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goAddHabit))
     navigationItem.rightBarButtonItems = [addButton]
     navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
+    
 
 }
    // MARK: создаю селектор для кнопки + (по условию открывает модально) отправляю на HabitViewController
@@ -72,10 +75,10 @@ func navBarCustomization () {
 
     private func addConstraints(){
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -6)
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -117,5 +120,14 @@ extension HabbitsViewController : UICollectionViewDataSource, UICollectionViewDe
         //для яеек привычек
         return CGSize(width: view.frame.width-32 , height: 130)
     }
+    
+    //MARK: добовляю функцию: при нажатиии на ячейку привычки - открывается HabitDetailsViewController
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row != 0 {  //если ячейка не нулевая
+            numberOfIndex = indexPath.row - 1
+            let habitDetailsViewController = HabitDetailsViewController()
+            habitDetailsViewController.index = indexPath.row - 1
+            navigationController?.pushViewController(habitDetailsViewController, animated: false)
+        }
+    }
 }
-
