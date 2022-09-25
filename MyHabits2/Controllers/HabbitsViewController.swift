@@ -46,18 +46,18 @@ class HabbitsViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //MARK: Обновляю коллекцию, при перезапуске View
         collectionView.reloadData()
-
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         }
 
 // MARK: создаю навбар
 func navBarCustomization () {
     let appearance = UINavigationBarAppearance()
-    appearance.backgroundColor = .white
-    
+    appearance.backgroundColor = .systemBackground
+    navigationController?.navigationBar.compactAppearance = appearance
+    navigationController?.navigationBar.scrollEdgeAppearance = appearance
     navigationController?.navigationBar.prefersLargeTitles = true
-    navigationItem.title = "Сегодня"
+    navigationItem.title = "Создать"
     
     // MARK: создаю кнопку + на навбаре
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goAddHabit))

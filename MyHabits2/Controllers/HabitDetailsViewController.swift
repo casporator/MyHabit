@@ -16,7 +16,7 @@ class HabitDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        self.navigationController?.navigationBar.prefersLargeTitles = false //отключаю большой заголовок
+        navigationController?.navigationBar.prefersLargeTitles = false //отключаю большой заголовок
         navigationItem.title = HabitsStore.shared.habits[index].name
         
         let chengeButton = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(goToHabitViewController))
