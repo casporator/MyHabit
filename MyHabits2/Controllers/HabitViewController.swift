@@ -44,7 +44,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     private lazy var colorButton : UIButton = {
         let button = UIButton()
-        button.backgroundColor = OrangeColor
+        button.backgroundColor = Colors.OrangeColor
         button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(openColorPicker) , for: .touchUpInside)
         button.toAutoLayout()
@@ -76,7 +76,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         let label = UILabel()
         label.text = "11:00 PM"
         label.font = UIFont(name: "SFProText-Regular", size: 17)
-        label.textColor = purpleColor
+        label.textColor = Colors.purpleColor
         label.toAutoLayout()
         
         return label
@@ -108,7 +108,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         let color = UIColorPickerViewController()
         color.supportsAlpha = false
         color.delegate = self
-        color.selectedColor = colorButton.backgroundColor ?? OrangeColor
+        color.selectedColor = colorButton.backgroundColor ?? Colors.OrangeColor
         present(color, animated: true)
     }
     
@@ -161,13 +161,13 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     func setupNavigationBar(){
     
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = lightGreyColor
+        appearance.backgroundColor = Colors.lightGreyColor
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         self.navigationItem.title = "Создать"
-        navigationItem.leftBarButtonItem?.tintColor = purpleColor
+        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
         
-        navigationItem.rightBarButtonItem?.tintColor = purpleColor
+        navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNewHabbit))
        
         

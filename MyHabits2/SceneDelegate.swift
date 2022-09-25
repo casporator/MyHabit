@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         habbitsTabBarNavigatorController.tabBarItem = item1
         infoTabBarNavigatorController.tabBarItem = item2
         
-        UITabBar.appearance().tintColor = purpleColor
+        UITabBar.appearance().tintColor = Colors.purpleColor
         UITabBar.appearance().backgroundColor = .systemGray
       
         

@@ -58,7 +58,7 @@ class InfoViewController: UIViewController {
     // MARK: настройка навигационного бара
     func navBarCustomization () {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = lightGreyColor
+        appearance.backgroundColor = Colors.lightGreyColor
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         self.navigationItem.title = "Информация"
         

@@ -22,7 +22,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     private lazy var progressBar : UIProgressView = {
         let progress = UIProgressView()
-        progress.tintColor = purpleColor
+        progress.tintColor = Colors.purpleColor
         progress.backgroundColor = .systemGray2
         progress.toAutoLayout()
         

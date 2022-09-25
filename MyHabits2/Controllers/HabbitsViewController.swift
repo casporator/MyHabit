@@ -22,7 +22,7 @@ class HabbitsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = lightGreyColor
+        view.backgroundColor = Colors.lightGreyColor
         navBarCustomization()
                                        
        }
@@ -30,14 +30,14 @@ class HabbitsViewController : UIViewController {
     // MARK: создаю навбар
 func navBarCustomization () {
     let appearance = UINavigationBarAppearance()
-    appearance.backgroundColor = lightGreyColor
+    appearance.backgroundColor = Colors.lightGreyColor
     self.navigationItem.title = "Сегодня"
     navigationController?.navigationBar.prefersLargeTitles = true
     
     // MARK: создаю кнопку + на навбаре
     let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goAddHabit))
     navigationItem.rightBarButtonItems = [addButton]
-    navigationItem.rightBarButtonItem?.tintColor = purpleColor
+    navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
 
 }
    // MARK: создаю селектор для кнопки + (по условию открывает модально) отправляю на HabitViewController

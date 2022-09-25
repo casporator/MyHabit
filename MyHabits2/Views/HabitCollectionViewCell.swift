@@ -102,7 +102,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         if HabitsStore.shared.habits[index].isAlreadyTakenToday {
             print("уже трекали")
         } else {
-            roundButton.backgroundColor = UIColor(cgColor: roundButton.layer.borderColor ?? lightGreyColor as! CGColor)
+            roundButton.backgroundColor = UIColor(cgColor: roundButton.layer.borderColor ?? Colors.lightGreyColor as! CGColor)
             HabitsStore.shared.track(HabitsStore.shared.habits[index])
             countLabel.text = "Счетчик \(HabitsStore.shared.habits[index].trackDates.count)"
             completeMark.isHidden = false
