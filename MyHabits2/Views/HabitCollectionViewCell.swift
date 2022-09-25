@@ -53,7 +53,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
 
         private lazy var completeMark : UIImageView = {
             let mark = UIImageView()
-            mark.image = UIImage(named:"check")
+            mark.image = UIImage(named:"complete")
             mark.isHidden = true
             mark.toAutoLayout()
             
@@ -64,7 +64,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         super .init(frame: frame)
         self.backgroundColor = .white
 
-        contentView.addSubviews(nameLabel, timelabel, countLabel, roundButton, completeMark)
+        contentView.addSubviews(nameLabel, timelabel, countLabel, completeMark, roundButton)
        
 
         NSLayoutConstraint.activate([
@@ -82,8 +82,10 @@ class HabitCollectionViewCell: UICollectionViewCell {
             roundButton.heightAnchor.constraint(equalToConstant: 38),
             roundButton.widthAnchor.constraint(equalToConstant: 38),
 
-            completeMark.centerXAnchor.constraint(equalTo: roundButton.centerXAnchor),
-            completeMark.centerYAnchor.constraint(equalTo: roundButton.centerYAnchor),
+            completeMark.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 46),
+            completeMark.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -25),
+           // completeMark.centerXAnchor.constraint(equalTo: roundButton.centerXAnchor),
+           // completeMark.centerYAnchor.constraint(equalTo: roundButton.centerYAnchor),
             completeMark.heightAnchor.constraint(equalToConstant: 20),
             completeMark.widthAnchor.constraint(equalToConstant: 20),
 
@@ -100,12 +102,12 @@ class HabitCollectionViewCell: UICollectionViewCell {
         let index = nameLabel.tag
 
         if HabitsStore.shared.habits[index].isAlreadyTakenToday {
-            print("уже трекали")
+            roundButton.isEnabled = true
         } else {
+            completeMark.isHidden = false
             roundButton.backgroundColor = UIColor(cgColor: roundButton.layer.borderColor ?? Colors.lightGreyColor as! CGColor)
             HabitsStore.shared.track(HabitsStore.shared.habits[index])
             countLabel.text = "Счетчик \(HabitsStore.shared.habits[index].trackDates.count)"
-            completeMark.isHidden = false
         }
     }
 

@@ -54,7 +54,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
 
             progressBar.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 12),
             progressBar.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12),
-            progressBar.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            progressBar.bottomAnchor.constraint(equalTo: contentView.topAnchor, constant: 38),
         ])
     }
    
