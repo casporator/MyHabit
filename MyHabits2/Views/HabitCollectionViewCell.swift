@@ -117,6 +117,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         timelabel.text = " \(HabitsStore.shared.habits[index].dateString)"
         countLabel.text = "Счетчик \(HabitsStore.shared.habits[index].trackDates.count)"
         roundButton.layer.borderColor = HabitsStore.shared.habits[index].color.cgColor
+        
      
         if HabitsStore.shared.habits[index].isAlreadyTakenToday {
             //если трекали, красим фон кнопки
