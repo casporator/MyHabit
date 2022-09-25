@@ -34,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         UITabBar.appearance().tintColor = Colors.purpleColor
         UITabBar.appearance().backgroundColor = .systemGray
+        UITabBar.appearance().layer.borderColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.29).cgColor
       
         
 

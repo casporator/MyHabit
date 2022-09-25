@@ -54,6 +54,7 @@ func navBarCustomization () {
     let appearance = UINavigationBarAppearance()
     appearance.backgroundColor = Colors.lightGreyColor
     self.navigationItem.title = "Сегодня"
+    navigationItem.titleView?.layer.borderColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.29).cgColor
     navigationController?.navigationBar.prefersLargeTitles = true
     
     // MARK: создаю кнопку + на навбаре

@@ -64,7 +64,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     
     func setup() {
-        labelProgress.text = "\(HabitsStore.shared.todayProgress * 100)%"
+        labelProgress.text = "\(Int(HabitsStore.shared.todayProgress * 100))%" // fix перевел в Int
         progressBar.progress = HabitsStore.shared.todayProgress
     }
 }
