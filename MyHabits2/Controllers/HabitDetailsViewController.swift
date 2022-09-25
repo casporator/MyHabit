@@ -87,10 +87,8 @@ extension HabitDetailsViewController : UITableViewDelegate, UITableViewDataSourc
 
         //если привычка была затрекана, то ставим галку
         if HabitsStore.shared.habit(HabitsStore.shared.habits[index], isTrackedIn: HabitsStore.shared.dates[indexPath.row]) {
-            let checkmark = UIImageView(frame: CGRect(x: 0, y: 0, width: 26, height: 44))
-            checkmark.image = UIImage(systemName: "checkmark")
-            checkmark.tintColor = Colors.purpleColor
-            cell.accessoryView = checkmark
+            cell.tintColor = Colors.purpleColor
+            cell.accessoryType = .checkmark
         }
 
         return cell
