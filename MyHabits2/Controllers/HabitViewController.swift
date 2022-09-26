@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-var mark : Int = 0 
-var placeOfCall = " "
-var habbitIndex = Int()
-
 //MARK: объявляю все элементы согласно макуету:
 class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate {
     

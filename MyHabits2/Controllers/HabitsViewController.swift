@@ -40,39 +40,46 @@ class HabitsViewController : UIViewController {
         navBarCustomization()
         view.addSubview(collectionView)
         addConstraints()
-                                       
-       }
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         //MARK: Обновляю коллекцию, при перезапуске View
         collectionView.reloadData()
         navigationController?.navigationBar.prefersLargeTitles = true
+        //устанавливаю обзервер для отслеживания иуведомлений - если придут то выполняется reloadData
+        NotificationCenter.default.addObserver(self,
+                        selector: #selector(methodOfReceivedNotification(notification:)),
+                        name: Notification.Name("reloadData"),
+                        object: nil)
+    }
+    
+    // MARK: создаю навбар
+    func navBarCustomization () {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Создать"
         
-        }
-
-// MARK: создаю навбар
-func navBarCustomization () {
-    let appearance = UINavigationBarAppearance()
-    appearance.backgroundColor = .systemBackground
-    navigationController?.navigationBar.compactAppearance = appearance
-    navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    navigationController?.navigationBar.prefersLargeTitles = true
-    navigationItem.title = "Создать"
+        // MARK: создаю кнопку + на навбаре
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goAddHabit))
+        navigationItem.rightBarButtonItems = [addButton]
+        navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
+        
+        
+    }
+    // MARK: создаю селектор для кнопки + (по условию открывает модально) отправляю на HabitViewController
+    @objc func goAddHabit(){
+        let navController = UINavigationController(rootViewController: HabitViewController())
+        navController.modalPresentationStyle = .fullScreen
+        self.present(navController, animated:true, completion: nil)
+    }
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        collectionView.reloadData()
+    }
     
-    // MARK: создаю кнопку + на навбаре
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goAddHabit))
-    navigationItem.rightBarButtonItems = [addButton]
-    navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
-    
-
-}
-   // MARK: создаю селектор для кнопки + (по условию открывает модально) отправляю на HabitViewController
-@objc func goAddHabit(){
-    let navController = UINavigationController(rootViewController: HabitViewController())
-    navController.modalPresentationStyle = .fullScreen
-    self.present(navController, animated:true, completion: nil)
-}
-
     private func addConstraints(){
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
