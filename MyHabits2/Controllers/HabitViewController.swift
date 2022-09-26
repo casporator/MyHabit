@@ -8,8 +8,11 @@
 import Foundation
 import UIKit
 
-//MARK: объявляю все элементы согласно макуету:
 
+var placeOfCall = " "
+var habbitIndex = Int()
+
+//MARK: объявляю все элементы согласно макуету:
 class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate {
     
     private lazy var nameHabbit : UILabel = {
@@ -91,6 +94,21 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         
         return tPicker
     }()
+    //MARK: объявляю кнопку удаления привычки, которая видна только если перейти с DetailsViewController
+    private lazy var deleteButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .white
+        button.setTitle("Удалить привычку", for: .normal)
+        button.setTitleColor(Colors.redColor, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        button.addTarget(self, action: #selector(deleteHabbit) , for: .touchUpInside)
+        button.toAutoLayout()
+        
+        return button
+    }()
+    
+    //MARK: Объявляю alertController
+    let alertController = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку ?", preferredStyle: .alert)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,8 +119,38 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         setupNavigationBar()
         hideKeyboardWhenTappedAround() // прячу клавиатуру по тапу
         
-        }
+        
+        
+        if placeOfCall == "fromDetailsViewController" {
+           
+            view.addSubview(deleteButton)
+            addConstraintsForButton()
+            navigationItem.title = "Править"
+            
+            nameHabbit.text = HabitsStore.shared.habits[habbitIndex].name
+            colorButton.backgroundColor = HabitsStore.shared.habits[habbitIndex].color
+            timeHabbit.text = HabitsStore.shared.habits[habbitIndex].dateString
+            timePicker.date = HabitsStore.shared.habits[habbitIndex].date
 
+        
+        alertController.addAction(UIAlertAction(title: "Отмена", style: .default, handler: { _ in
+            print("Delete Canceled")
+        }))
+        alertController.addAction(UIAlertAction(title: "Удалить", style: .default, handler: { _ in
+            HabitsStore.shared.habits.remove(at: numberOfHabit)
+            self.dismiss(animated: true)
+            print("Habit was Delete")
+        }))
+       
+        } else {
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "hh:mm a"
+            dateFormatter.string(from: timePicker.date)
+            timeLabel.text = "\(dateFormatter.string(from: timePicker.date))"
+        }
+    }
+    
     //MARK: функция открытия ColorPicker'а
     @objc func openColorPicker(){
         let color = UIColorPickerViewController()
@@ -123,6 +171,12 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         dateFormatter.dateFormat = "hh:mm a"
         dateFormatter.string(from: timePicker.date)
         timeLabel.text = "\(dateFormatter.string(from: timePicker.date))"
+    }
+    
+    //MARK:
+    @objc func deleteHabbit(){
+        alertController.message = "Вы хотите удалить привычку \"\(nameTextfield.text ?? "нет созданных привычек")\"?"
+        self.present(alertController, animated: true, completion: nil)
     }
     
     //MARK: делаю верстку согласно макету
@@ -154,6 +208,14 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             timePicker.leftAnchor.constraint(equalTo: view.leftAnchor),
             timePicker.rightAnchor.constraint(equalTo: view.rightAnchor),
             timePicker.topAnchor.constraint(equalTo: timeText.bottomAnchor, constant: 15),
+        ])
+}
+    func addConstraintsForButton(){
+        NSLayoutConstraint.activate([
+            deleteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 18),
+            deleteButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            deleteButton.heightAnchor.constraint(equalToConstant: 22),
+    
             ])
     }
     

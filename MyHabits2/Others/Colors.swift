@@ -17,5 +17,6 @@ enum Colors {
     static var greenColor = UIColor(red: 29/255.0, green: 179/255.0, blue: 34/255.0, alpha: 1)
     static var IndigoColor = UIColor(red: 98/255.0, green: 54/255.0, blue: 255/255.0, alpha: 1)
     static var OrangeColor = UIColor(red: 255/255.0, green: 159/255.0, blue: 79/255.0, alpha: 1)
-
+    static var redColor = UIColor(red: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1)
 }
+

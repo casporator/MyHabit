@@ -47,7 +47,7 @@ class HabitDetailsViewController: UIViewController {
     @objc func goToHabitViewController(){
         let navController = UINavigationController(rootViewController: HabitViewController())
         navController.modalPresentationStyle = .fullScreen
-        
+        placeOfCall = "fromDetailsViewController" //метка откуда вызывем
         self.present(navController, animated:true, completion: nil)
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-var numberOfIndex = Int()
+var numberOfHabit = Int()
 
 class HabbitsViewController : UIViewController {
     
@@ -124,7 +124,7 @@ extension HabbitsViewController : UICollectionViewDataSource, UICollectionViewDe
     //MARK: добовляю функцию: при нажатиии на ячейку привычки - открывается HabitDetailsViewController
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row != 0 {  //если ячейка не нулевая
-            numberOfIndex = indexPath.row - 1
+            numberOfHabit = indexPath.row - 1
             let habitDetailsViewController = HabitDetailsViewController()
             habitDetailsViewController.index = indexPath.row - 1
             navigationController?.pushViewController(habitDetailsViewController, animated: false)
