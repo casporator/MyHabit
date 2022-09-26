@@ -31,6 +31,15 @@ class HabitDetailsViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if mark == 1 {
+            self.navigationController?.popViewController(animated: true)
+            mark = 0
+        }
+    }
+    
     func setupView(){
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = false //отключаю большой заголовок

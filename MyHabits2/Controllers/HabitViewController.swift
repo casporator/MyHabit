@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-
+var mark : Int = 0 
 var placeOfCall = " "
 var habbitIndex = Int()
 
@@ -120,22 +120,24 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         hideKeyboardWhenTappedAround() // прячу клавиатуру по тапу
         
     if placeOfCall == "fromDetailsViewController" {
-           
-            view.addSubview(deleteButton)
+         
+        //передаю все данные привычки от каторой перешли в настройки
+        nameTextfield.text = HabitsStore.shared.habits[habbitIndex].name //название
+        colorButton.backgroundColor = HabitsStore.shared.habits[habbitIndex].color //цвет
+        timeText.text = HabitsStore.shared.habits[habbitIndex].dateString // время
+        timePicker.date = HabitsStore.shared.habits[habbitIndex].date //тайм пикер
+        
+        
+        view.addSubview(deleteButton)
             addConstraintsForButton()
     
-            nameHabbit.text = HabitsStore.shared.habits[habbitIndex].name
-            colorButton.backgroundColor = HabitsStore.shared.habits[habbitIndex].color
-            timeHabbit.text = HabitsStore.shared.habits[habbitIndex].dateString
-            timePicker.date = HabitsStore.shared.habits[habbitIndex].date
-
-        
         alertController.addAction(UIAlertAction(title: "Отмена", style: .default, handler: { _ in
             print("Delete Canceled")
         }))
         alertController.addAction(UIAlertAction(title: "Удалить", style: .default, handler: { _ in
             HabitsStore.shared.habits.remove(at: habbitIndex)
             self.dismiss(animated: true)
+            mark = 1
             print("Habit was Delete")
         }))
        
@@ -268,6 +270,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         HabitsStore.shared.save()
 
         dismiss(animated: true)
+        mark = 1
     }
     
 }
