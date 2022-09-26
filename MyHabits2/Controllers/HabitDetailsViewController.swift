@@ -41,6 +41,7 @@ class HabitDetailsViewController: UIViewController {
         let chengeButton = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(goToHabitViewController))
         navigationItem.rightBarButtonItems = [chengeButton]
         navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
+        
 
     }
     

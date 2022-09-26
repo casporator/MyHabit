@@ -12,7 +12,7 @@
 		BBAFDF6E28DB4FD000C4177C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF6D28DB4FD000C4177C /* ViewController.swift */; };
 		BBAFDF7328DB4FD100C4177C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFDF7228DB4FD100C4177C /* Assets.xcassets */; };
 		BBAFDF8028DB51BA00C4177C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF7F28DB51BA00C4177C /* Colors.swift */; };
-		BBAFDF8228DB527E00C4177C /* HabbitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8128DB527E00C4177C /* HabbitsViewController.swift */; };
+		BBAFDF8228DB527E00C4177C /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8128DB527E00C4177C /* HabitsViewController.swift */; };
 		BBAFDF8428DB52AD00C4177C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8328DB52AD00C4177C /* InfoViewController.swift */; };
 		BBAFDF8628DB986200C4177C /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8528DB986200C4177C /* Extentions.swift */; };
 		BBAFDF8828DB99C500C4177C /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8728DB99C500C4177C /* HabitViewController.swift */; };
@@ -31,7 +31,7 @@
 		BBAFDF7228DB4FD100C4177C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBAFDF7728DB4FD100C4177C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBAFDF7F28DB51BA00C4177C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		BBAFDF8128DB527E00C4177C /* HabbitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabbitsViewController.swift; sourceTree = "<group>"; };
+		BBAFDF8128DB527E00C4177C /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		BBAFDF8328DB52AD00C4177C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		BBAFDF8528DB986200C4177C /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		BBAFDF8728DB99C500C4177C /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		BBAFDF7E28DB519C00C4177C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BBAFDF8128DB527E00C4177C /* HabbitsViewController.swift */,
+				BBAFDF8128DB527E00C4177C /* HabitsViewController.swift */,
 				BBAFDF8328DB52AD00C4177C /* InfoViewController.swift */,
 				BBAFDF8728DB99C500C4177C /* HabitViewController.swift */,
 				BBAFDF9228E0E07300C4177C /* HabitDetailsViewController.swift */,
@@ -194,7 +194,7 @@
 				BBAFDF8828DB99C500C4177C /* HabitViewController.swift in Sources */,
 				BBAFDF6C28DB4FD000C4177C /* SceneDelegate.swift in Sources */,
 				BBAFDF8428DB52AD00C4177C /* InfoViewController.swift in Sources */,
-				BBAFDF8228DB527E00C4177C /* HabbitsViewController.swift in Sources */,
+				BBAFDF8228DB527E00C4177C /* HabitsViewController.swift in Sources */,
 				BBAFDF8628DB986200C4177C /* Extentions.swift in Sources */,
 				BBAFDF8F28DF519700C4177C /* ProgressCollectionViewCell.swift in Sources */,
 			);

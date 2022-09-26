@@ -10,7 +10,7 @@ import UIKit
 
 var numberOfHabit = Int()
 
-class HabbitsViewController : UIViewController {
+class HabitsViewController : UIViewController {
     
     //MARK: создаю коллекцию
     private lazy var layout: UICollectionViewFlowLayout = {
@@ -84,7 +84,7 @@ func navBarCustomization () {
     
 }
 
-extension HabbitsViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension HabitsViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return HabitsStore.shared.habits.count + 1 // кол-во ячеек = кол-ву привычек в массиве и добовляю 1 ячеку для прогресса

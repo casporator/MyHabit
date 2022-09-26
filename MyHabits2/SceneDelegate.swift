@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var habbitsTabBarNavigatorController = UINavigationController()
         var infoTabBarNavigatorController = UINavigationController()
         
-        habbitsTabBarNavigatorController = UINavigationController.init(rootViewController: HabbitsViewController())
+        habbitsTabBarNavigatorController = UINavigationController.init(rootViewController: HabitsViewController())
         infoTabBarNavigatorController = UINavigationController.init(rootViewController: InfoViewController())
 
         tabBarController.viewControllers = [habbitsTabBarNavigatorController, infoTabBarNavigatorController]

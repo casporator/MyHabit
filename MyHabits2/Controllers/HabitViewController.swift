@@ -119,9 +119,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         setupNavigationBar()
         hideKeyboardWhenTappedAround() // прячу клавиатуру по тапу
         
-        
-        
-        if placeOfCall == "fromDetailsViewController" {
+    if placeOfCall == "fromDetailsViewController" {
            
             view.addSubview(deleteButton)
             addConstraintsForButton()
@@ -136,7 +134,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             print("Delete Canceled")
         }))
         alertController.addAction(UIAlertAction(title: "Удалить", style: .default, handler: { _ in
-            HabitsStore.shared.habits.remove(at: numberOfHabit)
+            HabitsStore.shared.habits.remove(at: habbitIndex)
             self.dismiss(animated: true)
             print("Habit was Delete")
         }))
@@ -174,7 +172,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     //MARK:
     @objc func deleteHabbit(){
-        alertController.message = "Вы хотите удалить привычку \"\(nameTextfield.text ?? "нет созданных привычек")\"?"
+        alertController.message = "Вы хотите удалить привычку \"\(nameTextfield.text ?? "")\"?"
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -222,20 +220,24 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     func setupNavigationBar(){
     
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = Colors.lightGreyColor
+        appearance.backgroundColor = .systemBackground
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+       
+  if placeOfCall == "fromDetailsViewController" {
+      
+        navigationItem.title = "Правка"
         navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
         navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
-        
-        if placeOfCall == "fromDetailsViewController" {
-            self.navigationItem.title = "Правка"
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveEditHabbit))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveEditHabbit))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
             
         }else{
             
-        self.navigationItem.title = "Создать"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNewHabbit))
+        navigationItem.title = "Создать"
+        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
+        navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNewHabbit))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
        
         }
     }
