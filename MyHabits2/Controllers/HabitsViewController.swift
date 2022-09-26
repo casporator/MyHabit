@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-var numberOfHabit = Int()
-
 class HabitsViewController : UIViewController {
     
     //MARK: создаю коллекцию

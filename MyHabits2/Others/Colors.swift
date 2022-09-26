@@ -22,4 +22,4 @@ enum Colors {
 
 var mark : Int = 0
 var placeOfCall = " "
-var habbitIndex = Int()
+var numberOfHabit = Int()

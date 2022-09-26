@@ -71,7 +71,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         return label
     }()
    
-    private lazy var timeLabel : UILabel = {
+    private lazy var habitTimeLabel : UILabel = {
         let label = UILabel()
         label.text = "11:00 PM"
         label.font = UIFont(name: "SFProText-Regular", size: 17)
@@ -110,7 +110,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubviews(nameHabbit, nameTextfield, colorHabbit, colorButton, timeHabbit, timeText, timeLabel, timePicker)
+        view.addSubviews(nameHabbit, nameTextfield, colorHabbit, colorButton, timeHabbit, timeText, habitTimeLabel, timePicker)
         addConstraints()
         setupNavigationBar()
         hideKeyboardWhenTappedAround() // прячу клавиатуру по тапу
@@ -118,10 +118,10 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     if placeOfCall == "fromDetailsViewController" {
          
         //передаю все данные привычки от каторой перешли в настройки
-        nameTextfield.text = HabitsStore.shared.habits[habbitIndex].name //название
-        colorButton.backgroundColor = HabitsStore.shared.habits[habbitIndex].color //цвет
-        timeText.text = HabitsStore.shared.habits[habbitIndex].dateString // время
-        timePicker.date = HabitsStore.shared.habits[habbitIndex].date //тайм пикер
+        nameTextfield.text = HabitsStore.shared.habits[numberOfHabit].name //название
+        colorButton.backgroundColor = HabitsStore.shared.habits[numberOfHabit].color //цвет
+        habitTimeLabel.text = HabitsStore.shared.habits[numberOfHabit].dateString // время
+        timePicker.date = HabitsStore.shared.habits[numberOfHabit].date //тайм пикер
         
         
         view.addSubview(deleteButton)
@@ -131,7 +131,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             print("Delete Canceled")
         }))
         alertController.addAction(UIAlertAction(title: "Удалить", style: .default, handler: { _ in
-            HabitsStore.shared.habits.remove(at: habbitIndex)
+            HabitsStore.shared.habits.remove(at: numberOfHabit)
             self.dismiss(animated: true)
             mark = 1
             print("Habit was Delete")
@@ -142,7 +142,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "hh:mm a"
             dateFormatter.string(from: timePicker.date)
-            timeLabel.text = "\(dateFormatter.string(from: timePicker.date))"
+            habitTimeLabel.text = "\(dateFormatter.string(from: timePicker.date))"
         }
     }
     
@@ -165,12 +165,12 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         dateFormatter.string(from: timePicker.date)
-        timeLabel.text = "\(dateFormatter.string(from: timePicker.date))"
+        habitTimeLabel.text = "\(dateFormatter.string(from: timePicker.date))"
     }
     
     //MARK:
     @objc func deleteHabbit(){
-        alertController.message = "Вы хотите удалить привычку \"\(nameTextfield.text ?? "")\"?"
+        alertController.message = "Вы хотите удалить привычку \"\(nameTextfield.text ?? " ")\"?"
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -197,8 +197,8 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
             timeText.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             timeText.topAnchor.constraint(equalTo: timeHabbit.bottomAnchor, constant: 7),
             
-            timeLabel.leftAnchor.constraint(equalTo: timeText.rightAnchor),
-            timeLabel.topAnchor.constraint(equalTo: timeHabbit.bottomAnchor, constant: 7),
+            habitTimeLabel.leftAnchor.constraint(equalTo: timeText.rightAnchor),
+            habitTimeLabel.topAnchor.constraint(equalTo: timeHabbit.bottomAnchor, constant: 7),
             
             timePicker.leftAnchor.constraint(equalTo: view.leftAnchor),
             timePicker.rightAnchor.constraint(equalTo: view.rightAnchor),
@@ -259,9 +259,9 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     @objc func saveEditHabbit(){
 
-        HabitsStore.shared.habits[habbitIndex].name = nameHabbit.text ?? " "
-        HabitsStore.shared.habits[habbitIndex].date = timePicker.date
-        HabitsStore.shared.habits[habbitIndex].color = colorButton.backgroundColor ?? .systemGray
+        HabitsStore.shared.habits[numberOfHabit].name = nameHabbit.text ?? " "
+        HabitsStore.shared.habits[numberOfHabit].date = timePicker.date
+        HabitsStore.shared.habits[numberOfHabit].color = colorButton.backgroundColor ?? .systemGray
 
         HabitsStore.shared.save()
 

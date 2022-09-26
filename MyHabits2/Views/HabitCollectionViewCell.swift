@@ -21,7 +21,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    private lazy var timelabel : UILabel = {
+    private lazy var timeLabel : UILabel = {
         let label = UILabel()
         label.text = "Каждый день в 7:30"
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
@@ -64,15 +64,15 @@ class HabitCollectionViewCell: UICollectionViewCell {
         super .init(frame: frame)
         self.backgroundColor = .white
 
-        contentView.addSubviews(nameLabel, timelabel, countLabel, completeMark, roundButton)
+        contentView.addSubviews(nameLabel, timeLabel, countLabel, completeMark, roundButton)
        
 
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
 
-            timelabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
-            timelabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
+            timeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 4),
+            timeLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
 
             countLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
             countLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 92),
@@ -82,11 +82,10 @@ class HabitCollectionViewCell: UICollectionViewCell {
             roundButton.heightAnchor.constraint(equalToConstant: 38),
             roundButton.widthAnchor.constraint(equalToConstant: 38),
 
-           
             completeMark.centerXAnchor.constraint(equalTo: roundButton.centerXAnchor),
             completeMark.centerYAnchor.constraint(equalTo: roundButton.centerYAnchor),
-            completeMark.heightAnchor.constraint(equalToConstant: 20),
-            completeMark.widthAnchor.constraint(equalToConstant: 20),
+            completeMark.heightAnchor.constraint(equalToConstant: 38),
+            completeMark.widthAnchor.constraint(equalToConstant: 38),
 
         ])
 
@@ -101,12 +100,14 @@ class HabitCollectionViewCell: UICollectionViewCell {
         let index = nameLabel.tag
 
         if HabitsStore.shared.habits[index].isAlreadyTakenToday {
-            roundButton.isEnabled = true
+           
         } else {
-            completeMark.isHidden = false
             roundButton.backgroundColor = UIColor(cgColor: roundButton.layer.borderColor ?? Colors.lightGreyColor as! CGColor)
             HabitsStore.shared.track(HabitsStore.shared.habits[index])
             countLabel.text = "Счетчик \(HabitsStore.shared.habits[index].trackDates.count)"
+            completeMark.isHidden = false
+            
+            NotificationCenter.default.post(name: Notification.Name("reloadData"), object: nil)
         }
     }
 
@@ -114,7 +115,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         nameLabel.tag = index
         nameLabel.text = HabitsStore.shared.habits[index].name
         nameLabel.textColor = HabitsStore.shared.habits[index].color
-        timelabel.text = " \(HabitsStore.shared.habits[index].dateString)"
+        timeLabel.text = " \(HabitsStore.shared.habits[index].dateString)"
         countLabel.text = "Счетчик \(HabitsStore.shared.habits[index].trackDates.count)"
         roundButton.layer.borderColor = HabitsStore.shared.habits[index].color.cgColor
         
