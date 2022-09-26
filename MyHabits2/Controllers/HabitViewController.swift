@@ -125,8 +125,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
            
             view.addSubview(deleteButton)
             addConstraintsForButton()
-            navigationItem.title = "Править"
-            
+    
             nameHabbit.text = HabitsStore.shared.habits[habbitIndex].name
             colorButton.backgroundColor = HabitsStore.shared.habits[habbitIndex].color
             timeHabbit.text = HabitsStore.shared.habits[habbitIndex].dateString
@@ -225,14 +224,20 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = Colors.lightGreyColor
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        self.navigationItem.title = "Создать"
         navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
-        
         navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
+        
+        if placeOfCall == "fromDetailsViewController" {
+            self.navigationItem.title = "Правка"
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveEditHabbit))
+            
+        }else{
+            
+        self.navigationItem.title = "Создать"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNewHabbit))
        
-        
+        }
     }
     //MARK: функция закрытия модального окна для кнопки "Отменить"
     @objc func closeHabitViewController(){
@@ -250,6 +255,17 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
 
         dismiss(animated: true)
   
+    }
+    
+    @objc func saveEditHabbit(){
+
+        HabitsStore.shared.habits[habbitIndex].name = nameHabbit.text ?? " "
+        HabitsStore.shared.habits[habbitIndex].date = timePicker.date
+        HabitsStore.shared.habits[habbitIndex].color = colorButton.backgroundColor ?? .systemGray
+
+        HabitsStore.shared.save()
+
+        dismiss(animated: true)
     }
     
 }
