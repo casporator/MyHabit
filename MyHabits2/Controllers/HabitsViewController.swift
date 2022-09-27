@@ -74,6 +74,7 @@ class HabitsViewController : UIViewController {
         navController.modalPresentationStyle = .fullScreen
         self.present(navController, animated:true, completion: nil)
     }
+    
     @objc func methodOfReceivedNotification(notification: Notification) {
         collectionView.reloadData()
     }

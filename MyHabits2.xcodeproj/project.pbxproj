@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB32129128E2749500A5C384 /* Var's.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32129028E2749500A5C384 /* Var's.swift */; };
 		BBAFDF6A28DB4FD000C4177C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF6928DB4FD000C4177C /* AppDelegate.swift */; };
 		BBAFDF6C28DB4FD000C4177C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF6B28DB4FD000C4177C /* SceneDelegate.swift */; };
 		BBAFDF6E28DB4FD000C4177C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF6D28DB4FD000C4177C /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB32129028E2749500A5C384 /* Var's.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Var's.swift"; sourceTree = "<group>"; };
 		BBAFDF6628DB4FD000C4177C /* MyHabits2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAFDF6928DB4FD000C4177C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBAFDF6B28DB4FD000C4177C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				BBAFDF8528DB986200C4177C /* Extentions.swift */,
 				BBAFDF8928DBA05100C4177C /* Texts.swift */,
 				BBAFDF8B28DCB7B800C4177C /*  HabitsStore.swift */,
+				BB32129028E2749500A5C384 /* Var's.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				BBAFDF8A28DBA05100C4177C /* Texts.swift in Sources */,
 				BBAFDF8828DB99C500C4177C /* HabitViewController.swift in Sources */,
 				BBAFDF6C28DB4FD000C4177C /* SceneDelegate.swift in Sources */,
+				BB32129128E2749500A5C384 /* Var's.swift in Sources */,
 				BBAFDF8428DB52AD00C4177C /* InfoViewController.swift in Sources */,
 				BBAFDF8228DB527E00C4177C /* HabitsViewController.swift in Sources */,
 				BBAFDF8628DB986200C4177C /* Extentions.swift in Sources */,

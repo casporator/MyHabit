@@ -20,6 +20,4 @@ enum Colors {
     static var redColor = UIColor(red: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1)
 }
 
-var mark : Int = 0
-var placeOfCall = " "
-var numberOfHabit = Int()
+

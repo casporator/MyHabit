@@ -64,7 +64,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         super .init(frame: frame)
         self.backgroundColor = .white
 
-        contentView.addSubviews(nameLabel, timeLabel, countLabel, completeMark, roundButton)
+        contentView.addSubviews(nameLabel, timeLabel, countLabel, roundButton, completeMark)
        
 
         NSLayoutConstraint.activate([
@@ -84,11 +84,10 @@ class HabitCollectionViewCell: UICollectionViewCell {
 
             completeMark.centerXAnchor.constraint(equalTo: roundButton.centerXAnchor),
             completeMark.centerYAnchor.constraint(equalTo: roundButton.centerYAnchor),
-            completeMark.heightAnchor.constraint(equalToConstant: 38),
-            completeMark.widthAnchor.constraint(equalToConstant: 38),
+            completeMark.heightAnchor.constraint(equalToConstant: 20),
+            completeMark.widthAnchor.constraint(equalToConstant: 20),
 
         ])
-
     }
 
     required init?(coder: NSCoder) {
