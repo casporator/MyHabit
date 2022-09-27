@@ -121,7 +121,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         nameTextfield.text = HabitsStore.shared.habits[numberOfHabit].name //название
         colorButton.backgroundColor = HabitsStore.shared.habits[numberOfHabit].color //цвет
         habitTimeLabel.text = HabitsStore.shared.habits[numberOfHabit].dateString // время
-        timePicker.date = HabitsStore.shared.habits[numberOfHabit].date //тайм пикер
+        timePicker.date = HabitsStore.shared.habits[numberOfHabit].date //время на тайм пикере
         
         
         view.addSubview(deleteButton)
@@ -170,7 +170,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     //MARK:
     @objc func deleteHabbit(){
-        alertController.message = "Вы хотите удалить привычку \"\(nameTextfield.text ?? " ")\"?"
+        alertController.message = "Вы хотите удалить привычку \"\(nameTextfield.text ?? "нет созданной привычки")\"?"
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -220,23 +220,23 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemBackground
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-       
+      
   if placeOfCall == "fromDetailsViewController" {
       
         navigationItem.title = "Правка"
-        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
-        navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveEditHabbit))
+        navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
+        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
+        
             
         }else{
             
         navigationItem.title = "Создать"
-        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
-        navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Сохранить", style: .plain, target: self, action: #selector(saveNewHabbit))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Отменить", style: .plain, target: self, action: #selector(closeHabitViewController))
-       
+        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
+        navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
         }
     }
     //MARK: функция закрытия модального окна для кнопки "Отменить"
@@ -259,7 +259,7 @@ class HabitViewController: UIViewController, UIColorPickerViewControllerDelegate
     
     @objc func saveEditHabbit(){
 
-        HabitsStore.shared.habits[numberOfHabit].name = nameHabbit.text ?? " "
+        HabitsStore.shared.habits[numberOfHabit].name = nameTextfield.text ?? " "
         HabitsStore.shared.habits[numberOfHabit].date = timePicker.date
         HabitsStore.shared.habits[numberOfHabit].color = colorButton.backgroundColor ?? .systemGray
 

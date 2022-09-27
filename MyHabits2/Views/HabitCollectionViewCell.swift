@@ -114,7 +114,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         nameLabel.tag = index
         nameLabel.text = HabitsStore.shared.habits[index].name
         nameLabel.textColor = HabitsStore.shared.habits[index].color
-        timeLabel.text = " \(HabitsStore.shared.habits[index].dateString)"
+        timeLabel.text = "\(HabitsStore.shared.habits[index].dateString)"
         countLabel.text = "Счетчик \(HabitsStore.shared.habits[index].trackDates.count)"
         roundButton.layer.borderColor = HabitsStore.shared.habits[index].color.cgColor
         

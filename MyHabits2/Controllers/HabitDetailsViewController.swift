@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class HabitDetailsViewController: UIViewController {
-  
+    
     var index : Int = 0
     
     private lazy var table : UITableView = {
@@ -44,13 +44,12 @@ class HabitDetailsViewController: UIViewController {
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = false //отключаю большой заголовок
         navigationItem.title = HabitsStore.shared.habits[index].name
-        
+       
         
         //MARK: создаю правую кнопку нав бара
-        let chengeButton = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(goToHabitViewController))
-        navigationItem.rightBarButtonItems = [chengeButton]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(goToHabitViewController))
         navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
-        
+        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
 
     }
     

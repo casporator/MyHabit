@@ -60,7 +60,7 @@ class InfoViewController: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = Colors.lightGreyColor
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        self.navigationItem.title = "Информация"
+        navigationItem.title = "Информация"
         
     }
     
@@ -72,18 +72,18 @@ class InfoViewController: UIViewController {
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.heightAnchor.constraint(equalToConstant: 876),
             
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 22),
-            contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 16),
-            contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -16),
-            contentView.bottomAnchor.constraint(equalTo:scrollView.bottomAnchor, constant: -60),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            contentView.bottomAnchor.constraint(equalTo:scrollView.bottomAnchor),
             
-            infoTitleLable.topAnchor.constraint(equalTo: contentView.topAnchor),
-            infoTitleLable.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            infoTitleLable.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22),
+            infoTitleLable.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16),
             
-            infoTextLable.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 40),
+            infoTextLable.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 62),
             infoTextLable.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             infoTextLable.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            infoTextLable.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -122),
+           
         ])
      }
     
