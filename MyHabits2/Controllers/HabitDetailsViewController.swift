@@ -103,4 +103,24 @@ extension HabitDetailsViewController : UITableViewDelegate, UITableViewDataSourc
         return cell
 
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    //MARK: Add Table Animation
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let degree:Double = 90
+        let rotationAngle = CGFloat(degree * M_PI / 180)
+        let rotationTransform = CATransform3DMakeRotation(rotationAngle, 0, 1, 0)
+        cell.layer.transform = rotationTransform
+        
+        UIView.animate(withDuration: 0.5, delay: 0.2 * Double(indexPath.row), options: .curveEaseOut, animations: {
+            cell.layer.transform = CATransform3DIdentity
+            })
+      
+    }
+ 
 }
+
+

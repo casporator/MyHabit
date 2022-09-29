@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BB32129128E2749500A5C384 /* Var's.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32129028E2749500A5C384 /* Var's.swift */; };
+		BB32129C28E34EB200A5C384 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB32129E28E34EB200A5C384 /* Launch Screen.storyboard */; };
 		BBAFDF6A28DB4FD000C4177C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF6928DB4FD000C4177C /* AppDelegate.swift */; };
 		BBAFDF6C28DB4FD000C4177C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF6B28DB4FD000C4177C /* SceneDelegate.swift */; };
-		BBAFDF6E28DB4FD000C4177C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF6D28DB4FD000C4177C /* ViewController.swift */; };
 		BBAFDF7328DB4FD100C4177C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFDF7228DB4FD100C4177C /* Assets.xcassets */; };
 		BBAFDF8028DB51BA00C4177C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF7F28DB51BA00C4177C /* Colors.swift */; };
 		BBAFDF8228DB527E00C4177C /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAFDF8128DB527E00C4177C /* HabitsViewController.swift */; };
@@ -26,10 +26,10 @@
 
 /* Begin PBXFileReference section */
 		BB32129028E2749500A5C384 /* Var's.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Var's.swift"; sourceTree = "<group>"; };
+		BB32129D28E34EB200A5C384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BBAFDF6628DB4FD000C4177C /* MyHabits2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAFDF6928DB4FD000C4177C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBAFDF6B28DB4FD000C4177C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BBAFDF6D28DB4FD000C4177C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBAFDF7228DB4FD100C4177C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBAFDF7728DB4FD100C4177C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBAFDF7F28DB51BA00C4177C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -79,7 +79,6 @@
 				BBAFDF7D28DB518900C4177C /* Others */,
 				BBAFDF6928DB4FD000C4177C /* AppDelegate.swift */,
 				BBAFDF6B28DB4FD000C4177C /* SceneDelegate.swift */,
-				BBAFDF6D28DB4FD000C4177C /* ViewController.swift */,
 				BBAFDF7228DB4FD100C4177C /* Assets.xcassets */,
 				BBAFDF7728DB4FD100C4177C /* Info.plist */,
 			);
@@ -114,6 +113,7 @@
 			children = (
 				BBAFDF8E28DF519700C4177C /* ProgressCollectionViewCell.swift */,
 				BBAFDF9028DF526400C4177C /* HabitCollectionViewCell.swift */,
+				BB32129E28E34EB200A5C384 /* Launch Screen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB32129C28E34EB200A5C384 /* Launch Screen.storyboard in Resources */,
 				BBAFDF7328DB4FD100C4177C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,7 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBAFDF9328E0E07400C4177C /* HabitDetailsViewController.swift in Sources */,
-				BBAFDF6E28DB4FD000C4177C /* ViewController.swift in Sources */,
 				BBAFDF8C28DCB7B800C4177C /*  HabitsStore.swift in Sources */,
 				BBAFDF9128DF526400C4177C /* HabitCollectionViewCell.swift in Sources */,
 				BBAFDF8028DB51BA00C4177C /* Colors.swift in Sources */,
@@ -205,6 +205,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB32129E28E34EB200A5C384 /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB32129D28E34EB200A5C384 /* Base */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BBAFDF7828DB4FD100C4177C /* Debug */ = {
