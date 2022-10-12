@@ -54,7 +54,7 @@ class HabitsViewController : UIViewController {
     
     func setUpView() {
         view.backgroundColor = .white
-        tabBarController?.tabBar.backgroundColor = Colors.lightGreyColor
+        tabBarController?.tabBar.backgroundColor = Colors.tabBarColor
         tabBarController?.tabBar.isTranslucent = false
         tabBarController?.tabBar.layer.borderColor = Colors.seporator.cgColor
         tabBarController?.tabBar.layer.borderWidth = 1
@@ -91,10 +91,10 @@ class HabitsViewController : UIViewController {
     
     private func addConstraints(){
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            collectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     

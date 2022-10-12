@@ -19,7 +19,9 @@ enum Colors {
     static var OrangeColor = UIColor(red: 255/255.0, green: 159/255.0, blue: 79/255.0, alpha: 1)
     static var redColor = UIColor(red: 255/255.0, green: 59/255.0, blue: 48/255.0, alpha: 1)
     static var seporator = UIColor(red: 60/255.0, green: 60/255.0, blue: 67/255.0, alpha: 0.29)
+    static var tabBarColor = UIColor(red: 247/255.0, green: 247/255.0, blue: 247/255.0, alpha: 1)
 }
+
 
 
 
