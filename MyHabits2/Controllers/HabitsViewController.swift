@@ -34,7 +34,7 @@ class HabitsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        setUpView()
         navBarCustomization()
         view.addSubview(collectionView)
         addConstraints()
@@ -52,8 +52,18 @@ class HabitsViewController : UIViewController {
                         object: nil)
     }
     
+    func setUpView() {
+        view.backgroundColor = .white
+        tabBarController?.tabBar.backgroundColor = Colors.lightGreyColor
+        tabBarController?.tabBar.isTranslucent = false
+        tabBarController?.tabBar.layer.borderColor = Colors.seporator.cgColor
+        tabBarController?.tabBar.layer.borderWidth = 1
+        tabBarController?.tabBar.layer.masksToBounds = true
+    }
+    
+ 
     // MARK: создаю навбар
-    func navBarCustomization () {
+    func navBarCustomization() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemBackground
         navigationController?.navigationBar.compactAppearance = appearance
