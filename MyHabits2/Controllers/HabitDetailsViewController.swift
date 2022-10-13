@@ -45,10 +45,10 @@ class HabitDetailsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false //отключаю большой заголовок
         navigationItem.title = HabitsStore.shared.habits[index].name
         navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
-        navigationItem.leftBarButtonItem?.title = "Сегодня"
+       
         
         //MARK: создаю правую кнопку нав бара
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(goToHabitViewController))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: Text.deleilRightButton, style: .plain, target: self, action: #selector(goToHabitViewController))
         navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
         
 
@@ -76,7 +76,7 @@ class HabitDetailsViewController: UIViewController {
 extension HabitDetailsViewController : UITableViewDelegate, UITableViewDataSource {
     //задаю хедер
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        "АКТИВНОСТЬ"
+        Text.detailsTableTitile
     }
     //задаю кол-во секций = 1
     func numberOfSections(in tableView: UITableView) -> Int {

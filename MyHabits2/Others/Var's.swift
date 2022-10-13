@@ -11,3 +11,5 @@ import UIKit
 var mark : Int = 0
 var placeOfCall = " "
 var numberOfHabit = Int()
+
+

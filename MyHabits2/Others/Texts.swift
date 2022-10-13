@@ -9,10 +9,24 @@ import Foundation
 import UIKit
 
 enum Text {
+  static var alarmMessage = "Вы хотите удалить привычку"
+
+  static var HabitPlace = "fromNewHabbit"
+  static var detailPlace = "fromDetailsViewController"
+  static var detailsTableTitile = "АКТИВНОСТЬ"
+    
+  static var leftHabitButton = "Отменить"
+  static var rightHabitButton = "Сохранить"
+    
+  static var deleilRightButton = "Правка"
+  
+  static var AddHabitTitile = "Создать"
+  static var habitNavTitle = "Правка"
+  static var toomorowNavTitile = "Сегодня"
   static var infoNavTitle = "Информация"
   static var titleForInfo : String = "Привычка за 21 день"
   static var textForInfo : String = """
-Прохождение этапов, за которые за 21 день вырабатывается привычка, подчиняется следующему алгоритму:
+ Прохождение этапов, за которые за 21 день вырабатывается привычка, подчиняется следующему алгоритму:
 
 1. Провести 1 день без обращения
 к старым привычкам, стараться вести себя так, как будто цель, загаданная в перспективу, находится на расстоянии шага.

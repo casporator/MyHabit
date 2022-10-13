@@ -45,6 +45,7 @@ class HabitsViewController : UIViewController {
         //MARK: Обновляю коллекцию, при перезапуске View
         collectionView.reloadData()
         navigationController?.navigationBar.prefersLargeTitles = true
+        
         //устанавливаю обзервер для отслеживания иуведомлений - если придут то выполняется reloadData
         NotificationCenter.default.addObserver(self,
                         selector: #selector(methodOfReceivedNotification(notification:)),
@@ -64,7 +65,7 @@ class HabitsViewController : UIViewController {
  
     // MARK: создаю навбар
     func navBarCustomization() {
-        self.navigationItem.title = "Сегодня"
+        self.navigationItem.title = Text.toomorowNavTitile
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemBackground
         navigationController?.navigationBar.compactAppearance = appearance
@@ -82,7 +83,7 @@ class HabitsViewController : UIViewController {
     // MARK: создаю селектор для кнопки + (по условию открывает модально) отправляю на HabitViewController
     @objc func goAddHabit(){
         
-        placeOfCall = "fromNewHabbit"
+        placeOfCall = Text.HabitPlace
         
         let navController = UINavigationController(rootViewController: HabitViewController())
         navController.modalPresentationStyle = .fullScreen
