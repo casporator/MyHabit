@@ -44,12 +44,13 @@ class HabitDetailsViewController: UIViewController {
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = false //отключаю большой заголовок
         navigationItem.title = HabitsStore.shared.habits[index].name
-       
+        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
+        navigationItem.leftBarButtonItem?.title = "Сегодня"
         
         //MARK: создаю правую кнопку нав бара
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Править", style: .plain, target: self, action: #selector(goToHabitViewController))
         navigationItem.rightBarButtonItem?.tintColor = Colors.purpleColor
-        navigationItem.leftBarButtonItem?.tintColor = Colors.purpleColor
+        
 
     }
     

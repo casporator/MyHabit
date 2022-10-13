@@ -64,12 +64,13 @@ class HabitsViewController : UIViewController {
  
     // MARK: создаю навбар
     func navBarCustomization() {
+        self.navigationItem.title = "Сегодня"
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .systemBackground
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Создать"
+       
         
         // MARK: создаю кнопку + на навбаре
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(goAddHabit))
@@ -110,6 +111,7 @@ extension HabitsViewController : UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         // задаю прогресс бар как 0 ячейку
         if indexPath.row == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomProgressCell", for: indexPath) as? ProgressCollectionViewCell else {
