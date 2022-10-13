@@ -27,7 +27,7 @@ class InfoViewController: UIViewController {
     
     private lazy var infoTitleLable: UILabel = {
         let infoTitle = UILabel()
-        infoTitle.text = TitleForInfo
+        infoTitle.text = Text.titleForInfo
         infoTitle.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         infoTitle.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         infoTitle.toAutoLayout()
@@ -37,7 +37,7 @@ class InfoViewController: UIViewController {
     
     private lazy var infoTextLable: UILabel = {
         let infoText = UILabel()
-        infoText.text = TextForInfo
+        infoText.text = Text.textForInfo
         infoText.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         infoText.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         infoText.numberOfLines = 0
@@ -60,7 +60,7 @@ class InfoViewController: UIViewController {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = Colors.lightGreyColor
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationItem.title = "Информация"
+        navigationItem.title = Text.infoNavTitle
         
     }
     
@@ -70,7 +70,7 @@ class InfoViewController: UIViewController {
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 876),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -44),
             
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
@@ -83,7 +83,7 @@ class InfoViewController: UIViewController {
             infoTextLable.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 62),
             infoTextLable.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             infoTextLable.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-           
+            infoTextLable.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -22)
         ])
      }
     

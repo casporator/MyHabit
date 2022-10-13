@@ -8,8 +8,10 @@
 import Foundation
 import UIKit
 
-let TitleForInfo : String = "Привычка за 21 день"
-let TextForInfo : String = """
+enum Text {
+  static var infoNavTitle = "Информация"
+  static var titleForInfo : String = "Привычка за 21 день"
+  static var textForInfo : String = """
 Прохождение этапов, за которые за 21 день вырабатывается привычка, подчиняется следующему алгоритму:
 
 1. Провести 1 день без обращения
@@ -26,3 +28,4 @@ let TextForInfo : String = """
 6. На 90-й день соблюдения техники все лишнее из «прошлой жизни» перестает напоминать о себе, и человек, оглянувшись назад, осознает себя полностью обновившимся.
 """
 
+}
