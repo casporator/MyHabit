@@ -80,6 +80,9 @@ class HabitsViewController : UIViewController {
     }
     // MARK: создаю селектор для кнопки + (по условию открывает модально) отправляю на HabitViewController
     @objc func goAddHabit(){
+        
+        placeOfCall = "fromNewHabbit"
+        
         let navController = UINavigationController(rootViewController: HabitViewController())
         navController.modalPresentationStyle = .fullScreen
         self.present(navController, animated:true, completion: nil)
